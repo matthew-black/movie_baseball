@@ -6,7 +6,7 @@ body {
 
 nav {
   float: right;
-  /* clear: right;  #--might be helpful--# */
+   clear: right;  #--might be helpful--#
 }
 
 nav li {
@@ -15,11 +15,12 @@ nav li {
 
 a {
   color: #444;
+  text-decoration: none;
 }
 
 h1 {
-  margin: 0.1em 0;
-  padding: 0.2em 0 0.2em;
+/*  margin: 0.1em 0;
+  padding: 0.2em 0 0.2em;*/
   color: #222;
   font-family: 'Roboto Condensed', sans-serif;
     /* Roboto Condensed looks amazing if it's bold & huge */
@@ -27,8 +28,8 @@ h1 {
 }
 
 h2, h3, h4, h5 {
-  margin: 0;
-  padding: 0;
+/*  margin: 0;
+  padding: 0;*/
   color: #222;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
@@ -46,20 +47,21 @@ h2, h3, h4, h5 {
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
+  margin-top: 3%;
   padding: 0;
 }
 
 .right {
   clear: right;
   float: right;
-  width: 85%;
+/*  width: 85%;*/
   margin: 0;
 }
 
 .left {
   clear: left;
   float: left;
-  width: 15%;
+/*  width: 15%;*/
   margin: 0;
   padding: 0;
 }
