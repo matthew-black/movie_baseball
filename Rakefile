@@ -85,7 +85,6 @@ end
 
 namespace :db do
   desc "Drop, create, and migrate the database"
-  puts "You really shouldn't be doing this very often, Matthew."
   task :reset => [:drop, :create, :migrate]
 
   desc "Create the databases at #{DB_NAME}"

@@ -24,7 +24,7 @@
   <title></title>
 </head>
 
-<body>
+<body class="container">
     <% if logged_in? %>
     <nav>
       <ul>
@@ -42,7 +42,7 @@
       </ul>
     </nav>
   <% end %>
-  <main class="container">
+  <main>
     <%= yield %>
   </main>
 </body>
