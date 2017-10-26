@@ -1,18 +1,31 @@
   #--Render login page--#
 get '/sessions/new' do
-  erb :"sessions/new"
+  if request.xhr?
+    erb :"sessions/_new", layout: false
+  else
+    erb :"sessions/new"
+  end
 end
 
   #--Ask database if the user exists and provided a valid password--#
 post '/sessions' do
   @user = User.find_by(email: params[:email])
-
-  if @user && @user.authenticate(params[:password])
-    session[:user_id] = @user.id
-    redirect '/'
+  if request.xhr?
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      erb :"sessions/_logged_in_nav", layout: false
+    else
+      @error = "incorrect email or password"
+      erb :"sessions/_logged_out_nav", layout: false
+    end
   else
-    @errors = ["Either your email or password was wrong"]
-    erb :"sessions/new"
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect '/'
+    else
+      @errors = ["incorrect email or password."]
+      erb :"sessions/new"
+    end
   end
 end
 
