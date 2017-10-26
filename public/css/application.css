@@ -6,7 +6,6 @@ body {
 
 nav {
   text-align: right;
-  font-weight: thin;
 }
 
 nav li {
@@ -46,16 +45,31 @@ h2, h3, h4, h5 {
 
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   margin-top: 3%;
   padding: 0;
+  clear: both;
+}
+
+main {
+
+  padding-top: 1em;
+  clear: left;
 }
 
 .right {
   clear: right;
   float: right;
-  width: 30%;
+  /*width: 35%;*/
+  margin: 2% 0;
+  padding: 0;
+}
+
+. {
+  clear: right;
+  float: right;
+  width: auto;
   margin: 2% 0;
   padding: 0;
 }
@@ -63,7 +77,7 @@ h2, h3, h4, h5 {
 .left {
   clear: left;
   float: left;
-  width: 70%;
+  /*width: 65%;*/
   margin: 2% 0;
   padding: 0;
 }
@@ -106,9 +120,13 @@ h2, h3, h4, h5 {
   margin-bottom: 1em;
 }
 
-.user-ajax-form input{
+.user-ajax-form {
   float: right;
   width: 153px;
+}
+
+.user-ajax-form input{
+  width: 100%;
   margin-bottom: 3px;
   font-size: 50%;
 }
@@ -118,6 +136,10 @@ h2, h3, h4, h5 {
   color: red;
 }
 
+#nav-username {
+  color: #888888;
+}
+.
 
   /* Clean sans combo: */
 /*font-family: 'Roboto', sans-serif;

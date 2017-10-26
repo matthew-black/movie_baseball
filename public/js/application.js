@@ -18,10 +18,11 @@ $(document).ready(function() {
   $("#session-manager").on("submit", "#login-form", function(event) {
     event.preventDefault();
     var $loginForm = $(this)
-    $loginForm.children().remove();
     var url = $loginForm.attr("action");
     var method = $loginForm.attr("method");
     var data = $loginForm.serialize();
+    $loginForm.children().remove();
+    console.log(data)
     var request = $.ajax({
       url: url,
       method: method,
@@ -51,10 +52,10 @@ $(document).ready(function() {
   $("#session-manager").on("submit", "#registration-form", function(event) {
     event.preventDefault();
     var $registrationForm = $(this);
-    $registrationForm.children().remove();
     var url = $registrationForm.attr("action");
     var method = $registrationForm.attr("method");
     var data = $registrationForm.serialize();
+    $registrationForm.children().remove();
     var request = $.ajax({
       url: url,
       method: method,

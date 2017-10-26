@@ -21,10 +21,11 @@
   </script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Make Something</title>
 </head>
 
 <body class="container">
+  <h1 class="left">Website Something</h1>
   <div id="session-manager" class="right">
     <% if logged_in? %>
       <%= erb :"sessions/_logged_in_nav", layout: false %>
@@ -32,7 +33,7 @@
       <%= erb :"sessions/_logged_out_nav", layout: false %>
     <% end %>
   </div>
-  <main>
+  <main class ="main-container">
     <%= yield %>
   </main>
 </body>
