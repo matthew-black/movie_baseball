@@ -1,11 +1,80 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // Show login form:
+  $("#session-manager").on("click", "#login-link", function(event) {
+    event.preventDefault();
+    var $li = $(this);
+    var url = $li.find("a").attr("href");
+    var request = $.ajax({
+      url: url
+    })
+    request.done(function(response) {
+      $li.closest("nav").siblings().remove();
+      $li.closest("div").append(response);
+    })
+  })
 
-  // $("h1").on("mouseover", function() {
-  //   $(this).css("background-color", "aqua")
-  // })
+  // Show login error or update with a logged-in view:
+  $("#session-manager").on("submit", "#login-form", function(event) {
+    event.preventDefault();
+    var $loginForm = $(this)
+    $loginForm.children().remove();
+    var url = $loginForm.attr("action");
+    var method = $loginForm.attr("method");
+    var data = $loginForm.serialize();
+    var request = $.ajax({
+      url: url,
+      method: method,
+      data: data
+    })
+    request.done(function(response) {
+      $loginForm.closest("#session-manager").children().remove();
+      $("body").find("#session-manager").append(response);
+    })
+  })
+
+  // Show registration form!
+  $("#session-manager").on("click", "#register-link", function(event) {
+    event.preventDefault();
+    var $li = $(this);
+    var url = $li.find("a").attr("href");
+    var request = $.ajax({
+      url: url
+    })
+    request.done(function(response) {
+      $li.closest("nav").siblings().remove();
+      $li.closest("div").append(response);
+    })
+  })
+
+  // Show registration error(s) or update with a logged-in view:
+  $("#session-manager").on("submit", "#registration-form", function(event) {
+    event.preventDefault();
+    var $registrationForm = $(this);
+    $registrationForm.children().remove();
+    var url = $registrationForm.attr("action");
+    var method = $registrationForm.attr("method");
+    var data = $registrationForm.serialize();
+    var request = $.ajax({
+      url: url,
+      method: method,
+      data: data
+    })
+    request.done(function(response) {
+      $registrationForm.closest("#session-manager").children().remove();
+      $("body").find("#session-manager").append(response);
+    })
+  })
+
 });
+
+
+
+
+
+
+
+
+
+
+
