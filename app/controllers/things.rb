@@ -15,10 +15,10 @@ post '/things' do
   authenticate!
 
   if @thing.valid?
-    current_user.things << @things
+    current_user.things << @thing
     redirect "/things/#{@thing.id}"
   else
-    @errors = @things.errors.full_messages
+    @errors = @thing.errors.full_messages
     erb :"/things/new"
   end
 end

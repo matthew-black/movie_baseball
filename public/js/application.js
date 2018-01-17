@@ -22,7 +22,6 @@ $(document).ready(function() {
     var method = $loginForm.attr("method");
     var data = $loginForm.serialize();
     $loginForm.children().remove();
-    console.log(data)
     var request = $.ajax({
       url: url,
       method: method,
