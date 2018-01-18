@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 include BCrypt
 
+  has_many :games
+
    #--BCrypt gem to hash and validate passwords--#
   validates :full_name, :username, :email, presence: true
   validates :username, :email, uniqueness: true
