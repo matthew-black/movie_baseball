@@ -66,6 +66,23 @@ $(document).ready(function() {
     })
   })
 
+  // When "Start Game" is clicked, show a movie:
+  $("#start-game").on("submit", function(event) {
+    event.preventDefault();
+    $startForm = $(this);
+    var url = $startForm.attr("action");
+    var method = $startForm.attr("method");
+    $startForm.remove();
+    var request = $.ajax({
+      url: url,
+      method: method
+    })
+    request.done(function(response) {
+      $("#game-space").append(response);
+    })
+
+  })
+
 });
 
 

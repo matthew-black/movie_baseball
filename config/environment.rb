@@ -1,4 +1,6 @@
 require 'dotenv/load'
+require 'themoviedb-api'
+
 
 # Set up gems listed in the Gemfile.
 # See: http://gembundler.com/bundler_setup.html
@@ -53,3 +55,5 @@ require APP_ROOT.join('app', 'models', 'application_record').to_s
 
 # Set up the database
 require APP_ROOT.join('config', 'database')
+
+Tmdb::Api.key(ENV["TMDB_KEY"])
