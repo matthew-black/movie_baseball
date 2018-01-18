@@ -56,4 +56,5 @@ require APP_ROOT.join('app', 'models', 'application_record').to_s
 # Set up the database
 require APP_ROOT.join('config', 'database')
 
+# Grab the API key from the .env file:
 Tmdb::Api.key(ENV["TMDB_KEY"])

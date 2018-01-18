@@ -17,3 +17,9 @@ class Movie
   end
 
 end
+
+# <ul>
+#   <% @movie.cast.each do |actor| %>
+#     <li><%= actor[:name] %></li>
+#   <% end %>
+# </ul>

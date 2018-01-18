@@ -11,10 +11,10 @@
 
   #--Create a new thing--#
 post '/games' do
-  authenticate!
-  @game = Game.create(score: 0, user_id: current_user.id)
+  @game = Game.create(score: 0, user_id: current_user_id)
   movie_id = Movie.fetch_popular_movie_id
   @movie = Movie.new(movie_id)
+
   if request.xhr?
     erb :"movies/_show_first", layout: false
   else
