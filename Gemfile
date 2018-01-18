@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'dotenv'
+gem 'themoviedb-api'
 
   #--PostgreSQL--#
 gem 'pg'
