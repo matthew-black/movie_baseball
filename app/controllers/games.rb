@@ -14,6 +14,7 @@ post '/games' do
   @game = Game.create(score: 0, user_id: current_user_id)
   movie_id = Movie.fetch_popular_movie_id
   @movie = Movie.new(movie_id)
+  p @movie.cast
 
   if request.xhr?
     erb :"movies/_show_first", layout: false
