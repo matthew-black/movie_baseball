@@ -4,4 +4,8 @@ class Game < ActiveRecord::Base
   has_many :used_movies
   has_many :used_actors
 
+  # def self.current
+
+  # end
+
 end

@@ -1,0 +1,9 @@
+<h1><%= @movie.title %></h1>
+
+<img class="game-pic" src="<%= @movie.image %>">
+
+<form id="actor-guess" action="/actors" method="post">
+  <input type="text" name="actor" placeholder="actor">
+  <input type="submit">
+</form>
+

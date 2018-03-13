@@ -139,7 +139,10 @@ main {
 #nav-username {
   color: #888888;
 }
-.
+
+.game-pic {
+  border-radius: 50%;
+}
 
   /* Clean sans combo: */
 /*font-family: 'Roboto', sans-serif;
