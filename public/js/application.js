@@ -67,7 +67,7 @@ $(document).ready(function() {
   })
 
   // When "Start Game" is clicked, show a movie:
-  $("#start-game").on("submit", function(event) {
+  $("#game-space").on("submit", "#start-game", function(event) {
     event.preventDefault();
     $startForm = $(this);
     var url = $startForm.attr("action");
@@ -81,6 +81,38 @@ $(document).ready(function() {
       $("#game-space").append(response);
     })
 
+  })
+
+  $("#game-space").on("submit", "#actor-guess", function(event) {
+    event.preventDefault();
+    $actorForm = $(this);
+    var url = $actorForm.attr("action");
+    var method = $actorForm.attr("method");
+    var data = $actorForm.serialize();
+    var request = $.ajax({
+      url: url,
+      method: method,
+      data: data
+    })
+    request.done(function(response) {
+      $("#game-space").append(response);
+    })
+  })
+
+  $("#game-space").on("submit", "#movie-guess", function(event) {
+    event.preventDefault();
+    $movieForm = $(this);
+    var url = $movieForm.attr("action");
+    var method = $movieForm.attr("method");
+    var data = $movieForm.serialize();
+    var request = $.ajax({
+      url: url,
+      method: method,
+      data: data
+    })
+    request.done(function(response) {
+      $("#game-space").append(response);
+    })
   })
 
 });

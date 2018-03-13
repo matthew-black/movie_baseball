@@ -12,12 +12,16 @@
   #--Create a new thing--#
 post '/games' do
   @game = Game.create(score: 0, user_id: current_user_id)
+  session[:game_id] = @game.id
   movie_id = Movie.fetch_popular_movie_id
   @movie = Movie.new(movie_id)
-  p @movie.cast
+  used_movie = UsedMovie.create(title: @movie.title, tmdb_id: @movie.id, game_id: @game.id)
+  @game.used_movies << used_movie
+  puts "****************"
+  p session
 
   if request.xhr?
-    erb :"movies/_show_first", layout: false
+    erb :"movies/_show", layout: false
   else
     redirect "/"
   end
